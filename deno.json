@@ -1,0 +1,30 @@
+{
+  "imports": {
+    "@/": "./src/",
+    "@oak/oak": "jsr:@oak/oak@^17.2.0",
+    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1",
+    "@std/http": "jsr:@std/http@^1.0.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.0"
+  },
+  "tasks": {
+    "dev": "deno run -A npm:vite & deno run server:start",
+    "build": "deno run -A npm:vite build",
+    "server:start": "deno run -A --watch --unstable-kv ./api/main.ts",
+    "serve": "deno run build && deno run server:start"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "types": [
+      "react",
+      "react-dom",
+      "@types/react"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "deno.ns"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}
